@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package auth;
+option go_package="github.com/GinciuuKitakaze/contracts/auth/go;auth";
+
+import "google/protobuf/empty.proto";
+import "auth/auth_model.proto";
+
+service Auth {
+  rpc Register(RegisterRequest) returns (google.protobuf.Empty);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc Refresh(RefreshRequest) returns (LoginResponse);
+  rpc Validate(ValidateRequest) returns (ValidateResponse);
+  rpc Logout(RefreshRequest) returns (google.protobuf.Empty);
+  rpc DeleteUser(DeleteRequest) returns (google.protobuf.Empty);
+}
+
