@@ -5,7 +5,7 @@ option go_package="github.com/GinciuuKitakaze/contracts/account/go;account";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "account_model.proto";
+import "account/account_model.proto";
 import "pagination/pagination.proto";
 
 service Account {

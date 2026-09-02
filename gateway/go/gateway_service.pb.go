@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.12
 // 	protoc        v5.27.1
-// source: gateway_service.proto
+// source: gateway/gateway_service.proto
 
 package gateway
 
@@ -37,7 +37,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_gateway_service_proto_msgTypes[0]
+	mi := &file_gateway_gateway_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +49,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[0]
+	mi := &file_gateway_gateway_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +62,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{0}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterRequest) GetUser() *_go.User {
@@ -89,7 +89,7 @@ type RegisterResponse struct {
 
 func (x *RegisterResponse) Reset() {
 	*x = RegisterResponse{}
-	mi := &file_gateway_service_proto_msgTypes[1]
+	mi := &file_gateway_gateway_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -101,7 +101,7 @@ func (x *RegisterResponse) String() string {
 func (*RegisterResponse) ProtoMessage() {}
 
 func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[1]
+	mi := &file_gateway_gateway_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterResponse.ProtoReflect.Descriptor instead.
 func (*RegisterResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{1}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RegisterResponse) GetUser() *_go.User {
@@ -141,7 +141,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_gateway_service_proto_msgTypes[2]
+	mi := &file_gateway_gateway_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -153,7 +153,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[2]
+	mi := &file_gateway_gateway_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -166,7 +166,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{2}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *LoginRequest) GetLoginOrEmail() string {
@@ -193,7 +193,7 @@ type LoginResponse struct {
 
 func (x *LoginResponse) Reset() {
 	*x = LoginResponse{}
-	mi := &file_gateway_service_proto_msgTypes[3]
+	mi := &file_gateway_gateway_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -205,7 +205,7 @@ func (x *LoginResponse) String() string {
 func (*LoginResponse) ProtoMessage() {}
 
 func (x *LoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[3]
+	mi := &file_gateway_gateway_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -218,7 +218,7 @@ func (x *LoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
 func (*LoginResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{3}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LoginResponse) GetUser() *_go.User {
@@ -244,7 +244,7 @@ type RefreshRequest struct {
 
 func (x *RefreshRequest) Reset() {
 	*x = RefreshRequest{}
-	mi := &file_gateway_service_proto_msgTypes[4]
+	mi := &file_gateway_gateway_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -256,7 +256,7 @@ func (x *RefreshRequest) String() string {
 func (*RefreshRequest) ProtoMessage() {}
 
 func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[4]
+	mi := &file_gateway_gateway_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -269,7 +269,7 @@ func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshRequest.ProtoReflect.Descriptor instead.
 func (*RefreshRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{4}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RefreshRequest) GetRefreshToken() string {
@@ -288,7 +288,7 @@ type LogoutRequest struct {
 
 func (x *LogoutRequest) Reset() {
 	*x = LogoutRequest{}
-	mi := &file_gateway_service_proto_msgTypes[5]
+	mi := &file_gateway_gateway_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -300,7 +300,7 @@ func (x *LogoutRequest) String() string {
 func (*LogoutRequest) ProtoMessage() {}
 
 func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[5]
+	mi := &file_gateway_gateway_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -313,7 +313,7 @@ func (x *LogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutRequest.ProtoReflect.Descriptor instead.
 func (*LogoutRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{5}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *LogoutRequest) GetRefreshToken() string {
@@ -332,7 +332,7 @@ type ValidateTokenRequest struct {
 
 func (x *ValidateTokenRequest) Reset() {
 	*x = ValidateTokenRequest{}
-	mi := &file_gateway_service_proto_msgTypes[6]
+	mi := &file_gateway_gateway_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -344,7 +344,7 @@ func (x *ValidateTokenRequest) String() string {
 func (*ValidateTokenRequest) ProtoMessage() {}
 
 func (x *ValidateTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[6]
+	mi := &file_gateway_gateway_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -357,7 +357,7 @@ func (x *ValidateTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateTokenRequest.ProtoReflect.Descriptor instead.
 func (*ValidateTokenRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{6}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ValidateTokenRequest) GetAccessToken() string {
@@ -377,7 +377,7 @@ type ValidateTokenResponse struct {
 
 func (x *ValidateTokenResponse) Reset() {
 	*x = ValidateTokenResponse{}
-	mi := &file_gateway_service_proto_msgTypes[7]
+	mi := &file_gateway_gateway_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -389,7 +389,7 @@ func (x *ValidateTokenResponse) String() string {
 func (*ValidateTokenResponse) ProtoMessage() {}
 
 func (x *ValidateTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[7]
+	mi := &file_gateway_gateway_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -402,7 +402,7 @@ func (x *ValidateTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidateTokenResponse.ProtoReflect.Descriptor instead.
 func (*ValidateTokenResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{7}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ValidateTokenResponse) GetUserId() uint64 {
@@ -429,7 +429,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_gateway_service_proto_msgTypes[8]
+	mi := &file_gateway_gateway_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -441,7 +441,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[8]
+	mi := &file_gateway_gateway_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -454,7 +454,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{8}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CreateUserRequest) GetUser() *_go.CreateUser {
@@ -473,7 +473,7 @@ type GetUserReqyest struct {
 
 func (x *GetUserReqyest) Reset() {
 	*x = GetUserReqyest{}
-	mi := &file_gateway_service_proto_msgTypes[9]
+	mi := &file_gateway_gateway_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -485,7 +485,7 @@ func (x *GetUserReqyest) String() string {
 func (*GetUserReqyest) ProtoMessage() {}
 
 func (x *GetUserReqyest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[9]
+	mi := &file_gateway_gateway_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetUserReqyest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserReqyest.ProtoReflect.Descriptor instead.
 func (*GetUserReqyest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{9}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetUserReqyest) GetUserId() uint64 {
@@ -517,7 +517,7 @@ type GetUserResponse struct {
 
 func (x *GetUserResponse) Reset() {
 	*x = GetUserResponse{}
-	mi := &file_gateway_service_proto_msgTypes[10]
+	mi := &file_gateway_gateway_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -529,7 +529,7 @@ func (x *GetUserResponse) String() string {
 func (*GetUserResponse) ProtoMessage() {}
 
 func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[10]
+	mi := &file_gateway_gateway_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -542,7 +542,7 @@ func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{10}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetUserResponse) GetUser() *_go.User {
@@ -561,7 +561,7 @@ type GetCurrentUserResponse struct {
 
 func (x *GetCurrentUserResponse) Reset() {
 	*x = GetCurrentUserResponse{}
-	mi := &file_gateway_service_proto_msgTypes[11]
+	mi := &file_gateway_gateway_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -573,7 +573,7 @@ func (x *GetCurrentUserResponse) String() string {
 func (*GetCurrentUserResponse) ProtoMessage() {}
 
 func (x *GetCurrentUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[11]
+	mi := &file_gateway_gateway_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -586,7 +586,7 @@ func (x *GetCurrentUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCurrentUserResponse.ProtoReflect.Descriptor instead.
 func (*GetCurrentUserResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{11}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetCurrentUserResponse) GetUser() *_go.User {
@@ -605,7 +605,7 @@ type GetUsersRequest struct {
 
 func (x *GetUsersRequest) Reset() {
 	*x = GetUsersRequest{}
-	mi := &file_gateway_service_proto_msgTypes[12]
+	mi := &file_gateway_gateway_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -617,7 +617,7 @@ func (x *GetUsersRequest) String() string {
 func (*GetUsersRequest) ProtoMessage() {}
 
 func (x *GetUsersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[12]
+	mi := &file_gateway_gateway_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +630,7 @@ func (x *GetUsersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUsersRequest.ProtoReflect.Descriptor instead.
 func (*GetUsersRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{12}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetUsersRequest) GetPagination() *_go2.Pagination {
@@ -650,7 +650,7 @@ type GetUsersResponse struct {
 
 func (x *GetUsersResponse) Reset() {
 	*x = GetUsersResponse{}
-	mi := &file_gateway_service_proto_msgTypes[13]
+	mi := &file_gateway_gateway_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -662,7 +662,7 @@ func (x *GetUsersResponse) String() string {
 func (*GetUsersResponse) ProtoMessage() {}
 
 func (x *GetUsersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[13]
+	mi := &file_gateway_gateway_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -675,7 +675,7 @@ func (x *GetUsersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUsersResponse.ProtoReflect.Descriptor instead.
 func (*GetUsersResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{13}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetUsersResponse) GetUsers() []*_go.User {
@@ -702,7 +702,7 @@ type UpdateUserRequest struct {
 
 func (x *UpdateUserRequest) Reset() {
 	*x = UpdateUserRequest{}
-	mi := &file_gateway_service_proto_msgTypes[14]
+	mi := &file_gateway_gateway_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -714,7 +714,7 @@ func (x *UpdateUserRequest) String() string {
 func (*UpdateUserRequest) ProtoMessage() {}
 
 func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[14]
+	mi := &file_gateway_gateway_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -727,7 +727,7 @@ func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{14}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UpdateUserRequest) GetUserId() uint64 {
@@ -753,7 +753,7 @@ type UpdateCurrentUserRequest struct {
 
 func (x *UpdateCurrentUserRequest) Reset() {
 	*x = UpdateCurrentUserRequest{}
-	mi := &file_gateway_service_proto_msgTypes[15]
+	mi := &file_gateway_gateway_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -765,7 +765,7 @@ func (x *UpdateCurrentUserRequest) String() string {
 func (*UpdateCurrentUserRequest) ProtoMessage() {}
 
 func (x *UpdateCurrentUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[15]
+	mi := &file_gateway_gateway_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -778,7 +778,7 @@ func (x *UpdateCurrentUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCurrentUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCurrentUserRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{15}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *UpdateCurrentUserRequest) GetUser() *_go.User {
@@ -797,7 +797,7 @@ type DeleteUserRequest struct {
 
 func (x *DeleteUserRequest) Reset() {
 	*x = DeleteUserRequest{}
-	mi := &file_gateway_service_proto_msgTypes[16]
+	mi := &file_gateway_gateway_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -809,7 +809,7 @@ func (x *DeleteUserRequest) String() string {
 func (*DeleteUserRequest) ProtoMessage() {}
 
 func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[16]
+	mi := &file_gateway_gateway_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -822,7 +822,7 @@ func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserRequest.ProtoReflect.Descriptor instead.
 func (*DeleteUserRequest) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{16}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeleteUserRequest) GetUserId() uint64 {
@@ -841,7 +841,7 @@ type RefreshResponse struct {
 
 func (x *RefreshResponse) Reset() {
 	*x = RefreshResponse{}
-	mi := &file_gateway_service_proto_msgTypes[17]
+	mi := &file_gateway_gateway_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -853,7 +853,7 @@ func (x *RefreshResponse) String() string {
 func (*RefreshResponse) ProtoMessage() {}
 
 func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_service_proto_msgTypes[17]
+	mi := &file_gateway_gateway_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -866,7 +866,7 @@ func (x *RefreshResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshResponse.ProtoReflect.Descriptor instead.
 func (*RefreshResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_service_proto_rawDescGZIP(), []int{17}
+	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *RefreshResponse) GetTokenPair() *_go1.TokenPair {
@@ -876,11 +876,11 @@ func (x *RefreshResponse) GetTokenPair() *_go1.TokenPair {
 	return nil
 }
 
-var File_gateway_service_proto protoreflect.FileDescriptor
+var File_gateway_gateway_service_proto protoreflect.FileDescriptor
 
-const file_gateway_service_proto_rawDesc = "" +
+const file_gateway_gateway_service_proto_rawDesc = "" +
 	"\n" +
-	"\x15gateway_service.proto\x12\agateway\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1bpagination/pagination.proto\x1a\x1baccount/account_model.proto\x1a\x15auth/auth_model.proto\"P\n" +
+	"\x1dgateway/gateway_service.proto\x12\agateway\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1bpagination/pagination.proto\x1a\x1baccount/account_model.proto\x1a\x15auth/auth_model.proto\"P\n" +
 	"\x0fRegisterRequest\x12!\n" +
 	"\x04user\x18\x01 \x01(\v2\r.account.UserR\x04user\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"^\n" +
@@ -948,19 +948,19 @@ const file_gateway_service_proto_rawDesc = "" +
 	"\x11DeleteCurrentUser\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/api/v1/users/meB9Z7github.com/GinciuuKitakaze/contracts/gateway/go;gatewayb\x06proto3"
 
 var (
-	file_gateway_service_proto_rawDescOnce sync.Once
-	file_gateway_service_proto_rawDescData []byte
+	file_gateway_gateway_service_proto_rawDescOnce sync.Once
+	file_gateway_gateway_service_proto_rawDescData []byte
 )
 
-func file_gateway_service_proto_rawDescGZIP() []byte {
-	file_gateway_service_proto_rawDescOnce.Do(func() {
-		file_gateway_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_gateway_service_proto_rawDesc), len(file_gateway_service_proto_rawDesc)))
+func file_gateway_gateway_service_proto_rawDescGZIP() []byte {
+	file_gateway_gateway_service_proto_rawDescOnce.Do(func() {
+		file_gateway_gateway_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_gateway_gateway_service_proto_rawDesc), len(file_gateway_gateway_service_proto_rawDesc)))
 	})
-	return file_gateway_service_proto_rawDescData
+	return file_gateway_gateway_service_proto_rawDescData
 }
 
-var file_gateway_service_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_gateway_service_proto_goTypes = []any{
+var file_gateway_gateway_service_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_gateway_gateway_service_proto_goTypes = []any{
 	(*RegisterRequest)(nil),          // 0: gateway.RegisterRequest
 	(*RegisterResponse)(nil),         // 1: gateway.RegisterResponse
 	(*LoginRequest)(nil),             // 2: gateway.LoginRequest
@@ -985,7 +985,7 @@ var file_gateway_service_proto_goTypes = []any{
 	(*_go2.Pagination)(nil),          // 21: pagination.Pagination
 	(*emptypb.Empty)(nil),            // 22: google.protobuf.Empty
 }
-var file_gateway_service_proto_depIdxs = []int32{
+var file_gateway_gateway_service_proto_depIdxs = []int32{
 	18, // 0: gateway.RegisterRequest.user:type_name -> account.User
 	18, // 1: gateway.RegisterResponse.user:type_name -> account.User
 	19, // 2: gateway.RegisterResponse.tokens:type_name -> auth.TokenPair
@@ -1033,26 +1033,26 @@ var file_gateway_service_proto_depIdxs = []int32{
 	0,  // [0:14] is the sub-list for field type_name
 }
 
-func init() { file_gateway_service_proto_init() }
-func file_gateway_service_proto_init() {
-	if File_gateway_service_proto != nil {
+func init() { file_gateway_gateway_service_proto_init() }
+func file_gateway_gateway_service_proto_init() {
+	if File_gateway_gateway_service_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_gateway_service_proto_rawDesc), len(file_gateway_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_gateway_gateway_service_proto_rawDesc), len(file_gateway_gateway_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_gateway_service_proto_goTypes,
-		DependencyIndexes: file_gateway_service_proto_depIdxs,
-		MessageInfos:      file_gateway_service_proto_msgTypes,
+		GoTypes:           file_gateway_gateway_service_proto_goTypes,
+		DependencyIndexes: file_gateway_gateway_service_proto_depIdxs,
+		MessageInfos:      file_gateway_gateway_service_proto_msgTypes,
 	}.Build()
-	File_gateway_service_proto = out.File
-	file_gateway_service_proto_goTypes = nil
-	file_gateway_service_proto_depIdxs = nil
+	File_gateway_gateway_service_proto = out.File
+	file_gateway_gateway_service_proto_goTypes = nil
+	file_gateway_gateway_service_proto_depIdxs = nil
 }

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.12
 // 	protoc        v5.27.1
-// source: auth_service.proto
+// source: auth/auth_service.proto
 
 package auth
 
@@ -21,11 +21,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-var File_auth_service_proto protoreflect.FileDescriptor
+var File_auth_auth_service_proto protoreflect.FileDescriptor
 
-const file_auth_service_proto_rawDesc = "" +
+const file_auth_auth_service_proto_rawDesc = "" +
 	"\n" +
-	"\x12auth_service.proto\x12\x04auth\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15auth/auth_model.proto2\xd7\x02\n" +
+	"\x17auth/auth_service.proto\x12\x04auth\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15auth/auth_model.proto2\xd7\x02\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.google.protobuf.Empty\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x124\n" +
@@ -35,7 +35,7 @@ const file_auth_service_proto_rawDesc = "" +
 	"\n" +
 	"DeleteUser\x12\x13.auth.DeleteRequest\x1a\x16.google.protobuf.EmptyB3Z1github.com/GinciuuKitakaze/contracts/auth/go;authb\x06proto3"
 
-var file_auth_service_proto_goTypes = []any{
+var file_auth_auth_service_proto_goTypes = []any{
 	(*RegisterRequest)(nil),  // 0: auth.RegisterRequest
 	(*LoginRequest)(nil),     // 1: auth.LoginRequest
 	(*RefreshRequest)(nil),   // 2: auth.RefreshRequest
@@ -45,7 +45,7 @@ var file_auth_service_proto_goTypes = []any{
 	(*LoginResponse)(nil),    // 6: auth.LoginResponse
 	(*ValidateResponse)(nil), // 7: auth.ValidateResponse
 }
-var file_auth_service_proto_depIdxs = []int32{
+var file_auth_auth_service_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
 	1, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
 	2, // 2: auth.Auth.Refresh:input_type -> auth.RefreshRequest
@@ -65,9 +65,9 @@ var file_auth_service_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_auth_service_proto_init() }
-func file_auth_service_proto_init() {
-	if File_auth_service_proto != nil {
+func init() { file_auth_auth_service_proto_init() }
+func file_auth_auth_service_proto_init() {
+	if File_auth_auth_service_proto != nil {
 		return
 	}
 	file_auth_auth_model_proto_init()
@@ -75,16 +75,16 @@ func file_auth_service_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_service_proto_rawDesc), len(file_auth_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_auth_service_proto_rawDesc), len(file_auth_auth_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_auth_service_proto_goTypes,
-		DependencyIndexes: file_auth_service_proto_depIdxs,
+		GoTypes:           file_auth_auth_service_proto_goTypes,
+		DependencyIndexes: file_auth_auth_service_proto_depIdxs,
 	}.Build()
-	File_auth_service_proto = out.File
-	file_auth_service_proto_goTypes = nil
-	file_auth_service_proto_depIdxs = nil
+	File_auth_auth_service_proto = out.File
+	file_auth_auth_service_proto_goTypes = nil
+	file_auth_auth_service_proto_depIdxs = nil
 }
