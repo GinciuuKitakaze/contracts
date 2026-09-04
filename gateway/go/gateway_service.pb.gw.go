@@ -200,7 +200,7 @@ func local_request_Gateway_CreateUser_0(ctx context.Context, marshaler runtime.M
 
 func request_Gateway_GetUser_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUserReqyest
+		protoReq GetUserRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -221,7 +221,7 @@ func request_Gateway_GetUser_0(ctx context.Context, marshaler runtime.Marshaler,
 
 func local_request_Gateway_GetUser_0(ctx context.Context, marshaler runtime.Marshaler, server GatewayServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUserReqyest
+		protoReq GetUserRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)

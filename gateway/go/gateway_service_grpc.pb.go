@@ -49,7 +49,7 @@ type GatewayClient interface {
 	ValidateToken(ctx context.Context, in *ValidateTokenRequest, opts ...grpc.CallOption) (*ValidateTokenResponse, error)
 	// Управление пользователями (требует аутентификации)
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	GetUser(ctx context.Context, in *GetUserReqyest, opts ...grpc.CallOption) (*GetUserResponse, error)
+	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	GetCurrentUser(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetCurrentUserResponse, error)
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
@@ -126,7 +126,7 @@ func (c *gatewayClient) CreateUser(ctx context.Context, in *CreateUserRequest, o
 	return out, nil
 }
 
-func (c *gatewayClient) GetUser(ctx context.Context, in *GetUserReqyest, opts ...grpc.CallOption) (*GetUserResponse, error) {
+func (c *gatewayClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetUserResponse)
 	err := c.cc.Invoke(ctx, Gateway_GetUser_FullMethodName, in, out, cOpts...)
@@ -210,7 +210,7 @@ type GatewayServer interface {
 	ValidateToken(context.Context, *ValidateTokenRequest) (*ValidateTokenResponse, error)
 	// Управление пользователями (требует аутентификации)
 	CreateUser(context.Context, *CreateUserRequest) (*emptypb.Empty, error)
-	GetUser(context.Context, *GetUserReqyest) (*GetUserResponse, error)
+	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	GetCurrentUser(context.Context, *emptypb.Empty) (*GetCurrentUserResponse, error)
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*emptypb.Empty, error)
@@ -245,7 +245,7 @@ func (UnimplementedGatewayServer) ValidateToken(context.Context, *ValidateTokenR
 func (UnimplementedGatewayServer) CreateUser(context.Context, *CreateUserRequest) (*emptypb.Empty, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedGatewayServer) GetUser(context.Context, *GetUserReqyest) (*GetUserResponse, error) {
+func (UnimplementedGatewayServer) GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetUser not implemented")
 }
 func (UnimplementedGatewayServer) GetCurrentUser(context.Context, *emptypb.Empty) (*GetCurrentUserResponse, error) {
@@ -396,7 +396,7 @@ func _Gateway_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _Gateway_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserReqyest)
+	in := new(GetUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -408,7 +408,7 @@ func _Gateway_GetUser_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: Gateway_GetUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetUser(ctx, req.(*GetUserReqyest))
+		return srv.(GatewayServer).GetUser(ctx, req.(*GetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

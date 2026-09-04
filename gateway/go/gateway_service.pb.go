@@ -464,27 +464,27 @@ func (x *CreateUserRequest) GetUser() *_go.CreateUser {
 	return nil
 }
 
-type GetUserReqyest struct {
+type GetUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetUserReqyest) Reset() {
-	*x = GetUserReqyest{}
+func (x *GetUserRequest) Reset() {
+	*x = GetUserRequest{}
 	mi := &file_gateway_gateway_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetUserReqyest) String() string {
+func (x *GetUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetUserReqyest) ProtoMessage() {}
+func (*GetUserRequest) ProtoMessage() {}
 
-func (x *GetUserReqyest) ProtoReflect() protoreflect.Message {
+func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_gateway_gateway_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -496,12 +496,12 @@ func (x *GetUserReqyest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetUserReqyest.ProtoReflect.Descriptor instead.
-func (*GetUserReqyest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUserRequest.ProtoReflect.Descriptor instead.
+func (*GetUserRequest) Descriptor() ([]byte, []int) {
 	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetUserReqyest) GetUserId() uint64 {
+func (x *GetUserRequest) GetUserId() uint64 {
 	if x != nil {
 		return x.UserId
 	}
@@ -904,7 +904,7 @@ const file_gateway_gateway_service_proto_rawDesc = "" +
 	"\bis_valid\x18\x02 \x01(\bR\aisValid\"<\n" +
 	"\x11CreateUserRequest\x12'\n" +
 	"\x04user\x18\x01 \x01(\v2\x13.account.CreateUserR\x04user\")\n" +
-	"\x0eGetUserReqyest\x12\x17\n" +
+	"\x0eGetUserRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x04R\x06userId\"4\n" +
 	"\x0fGetUserResponse\x12!\n" +
 	"\x04user\x18\x01 \x01(\v2\r.account.UserR\x04user\";\n" +
@@ -937,7 +937,7 @@ const file_gateway_gateway_service_proto_rawDesc = "" +
 	"\rValidateToken\x12\x1d.gateway.ValidateTokenRequest\x1a\x1e.gateway.ValidateTokenResponse\" \x82\xd3\xe4\x93\x02\x1a:\x01*\"\x15/api/v1/auth/validate\x12Z\n" +
 	"\n" +
 	"CreateUser\x12\x1a.gateway.CreateUserRequest\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12:\x01*\"\r/api/v1/users\x12]\n" +
-	"\aGetUser\x12\x17.gateway.GetUserReqyest\x1a\x18.gateway.GetUserResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/users/{user_id}\x12c\n" +
+	"\aGetUser\x12\x17.gateway.GetUserRequest\x1a\x18.gateway.GetUserResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/users/{user_id}\x12c\n" +
 	"\x0eGetCurrentUser\x12\x16.google.protobuf.Empty\x1a\x1f.gateway.GetCurrentUserResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/api/v1/users/me\x12V\n" +
 	"\bGetUsers\x12\x18.gateway.GetUsersRequest\x1a\x19.gateway.GetUsersResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/api/v1/users\x12d\n" +
 	"\n" +
@@ -970,7 +970,7 @@ var file_gateway_gateway_service_proto_goTypes = []any{
 	(*ValidateTokenRequest)(nil),     // 6: gateway.ValidateTokenRequest
 	(*ValidateTokenResponse)(nil),    // 7: gateway.ValidateTokenResponse
 	(*CreateUserRequest)(nil),        // 8: gateway.CreateUserRequest
-	(*GetUserReqyest)(nil),           // 9: gateway.GetUserReqyest
+	(*GetUserRequest)(nil),           // 9: gateway.GetUserRequest
 	(*GetUserResponse)(nil),          // 10: gateway.GetUserResponse
 	(*GetCurrentUserResponse)(nil),   // 11: gateway.GetCurrentUserResponse
 	(*GetUsersRequest)(nil),          // 12: gateway.GetUsersRequest
@@ -1007,7 +1007,7 @@ var file_gateway_gateway_service_proto_depIdxs = []int32{
 	5,  // 17: gateway.Gateway.Logout:input_type -> gateway.LogoutRequest
 	6,  // 18: gateway.Gateway.ValidateToken:input_type -> gateway.ValidateTokenRequest
 	8,  // 19: gateway.Gateway.CreateUser:input_type -> gateway.CreateUserRequest
-	9,  // 20: gateway.Gateway.GetUser:input_type -> gateway.GetUserReqyest
+	9,  // 20: gateway.Gateway.GetUser:input_type -> gateway.GetUserRequest
 	23, // 21: gateway.Gateway.GetCurrentUser:input_type -> google.protobuf.Empty
 	12, // 22: gateway.Gateway.GetUsers:input_type -> gateway.GetUsersRequest
 	14, // 23: gateway.Gateway.UpdateUser:input_type -> gateway.UpdateUserRequest

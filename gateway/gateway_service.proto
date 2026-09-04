@@ -55,7 +55,7 @@ service Gateway {
     };
   }
 
-  rpc GetUser (GetUserReqyest) returns (GetUserResponse){
+  rpc GetUser (GetUserRequest) returns (GetUserResponse){
     option (google.api.http) = {
       get: "/api/v1/users/{user_id}"
     };
@@ -143,7 +143,7 @@ message CreateUserRequest {
   account.CreateUser user = 1;
 }
 
-message GetUserReqyest {
+message GetUserRequest {
   uint64 user_id = 1;
 }
 
