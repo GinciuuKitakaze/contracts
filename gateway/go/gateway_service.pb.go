@@ -695,7 +695,7 @@ func (x *GetUsersResponse) GetPagination() *_go2.Pagination {
 type UpdateUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	User          *_go.User              `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
+	User          *_go.UpdateUser        `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -737,7 +737,7 @@ func (x *UpdateUserRequest) GetUserId() uint64 {
 	return 0
 }
 
-func (x *UpdateUserRequest) GetUser() *_go.User {
+func (x *UpdateUserRequest) GetUser() *_go.UpdateUser {
 	if x != nil {
 		return x.User
 	}
@@ -746,7 +746,7 @@ func (x *UpdateUserRequest) GetUser() *_go.User {
 
 type UpdateCurrentUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	User          *_go.User              `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	User          *_go.UpdateUser        `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -781,7 +781,7 @@ func (*UpdateCurrentUserRequest) Descriptor() ([]byte, []int) {
 	return file_gateway_gateway_service_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *UpdateCurrentUserRequest) GetUser() *_go.User {
+func (x *UpdateCurrentUserRequest) GetUser() *_go.UpdateUser {
 	if x != nil {
 		return x.User
 	}
@@ -918,12 +918,12 @@ const file_gateway_gateway_service_proto_rawDesc = "" +
 	"\x05users\x18\x01 \x03(\v2\r.account.UserR\x05users\x126\n" +
 	"\n" +
 	"pagination\x18\x02 \x01(\v2\x16.pagination.PaginationR\n" +
-	"pagination\"O\n" +
+	"pagination\"U\n" +
 	"\x11UpdateUserRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x04R\x06userId\x12!\n" +
-	"\x04user\x18\x02 \x01(\v2\r.account.UserR\x04user\"=\n" +
-	"\x18UpdateCurrentUserRequest\x12!\n" +
-	"\x04user\x18\x01 \x01(\v2\r.account.UserR\x04user\",\n" +
+	"\auser_id\x18\x01 \x01(\x04R\x06userId\x12'\n" +
+	"\x04user\x18\x02 \x01(\v2\x13.account.UpdateUserR\x04user\"C\n" +
+	"\x18UpdateCurrentUserRequest\x12'\n" +
+	"\x04user\x18\x01 \x01(\v2\x13.account.UpdateUserR\x04user\",\n" +
 	"\x11DeleteUserRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x04R\x06userId\"A\n" +
 	"\x0fRefreshResponse\x12.\n" +
@@ -983,7 +983,8 @@ var file_gateway_gateway_service_proto_goTypes = []any{
 	(*_go1.TokenPair)(nil),           // 19: auth.TokenPair
 	(*_go.CreateUser)(nil),           // 20: account.CreateUser
 	(*_go2.Pagination)(nil),          // 21: pagination.Pagination
-	(*emptypb.Empty)(nil),            // 22: google.protobuf.Empty
+	(*_go.UpdateUser)(nil),           // 22: account.UpdateUser
+	(*emptypb.Empty)(nil),            // 23: google.protobuf.Empty
 }
 var file_gateway_gateway_service_proto_depIdxs = []int32{
 	18, // 0: gateway.RegisterRequest.user:type_name -> account.User
@@ -997,8 +998,8 @@ var file_gateway_gateway_service_proto_depIdxs = []int32{
 	21, // 8: gateway.GetUsersRequest.pagination:type_name -> pagination.Pagination
 	18, // 9: gateway.GetUsersResponse.users:type_name -> account.User
 	21, // 10: gateway.GetUsersResponse.pagination:type_name -> pagination.Pagination
-	18, // 11: gateway.UpdateUserRequest.user:type_name -> account.User
-	18, // 12: gateway.UpdateCurrentUserRequest.user:type_name -> account.User
+	22, // 11: gateway.UpdateUserRequest.user:type_name -> account.UpdateUser
+	22, // 12: gateway.UpdateCurrentUserRequest.user:type_name -> account.UpdateUser
 	19, // 13: gateway.RefreshResponse.token_pair:type_name -> auth.TokenPair
 	0,  // 14: gateway.Gateway.Register:input_type -> gateway.RegisterRequest
 	2,  // 15: gateway.Gateway.Login:input_type -> gateway.LoginRequest
@@ -1007,25 +1008,25 @@ var file_gateway_gateway_service_proto_depIdxs = []int32{
 	6,  // 18: gateway.Gateway.ValidateToken:input_type -> gateway.ValidateTokenRequest
 	8,  // 19: gateway.Gateway.CreateUser:input_type -> gateway.CreateUserRequest
 	9,  // 20: gateway.Gateway.GetUser:input_type -> gateway.GetUserReqyest
-	22, // 21: gateway.Gateway.GetCurrentUser:input_type -> google.protobuf.Empty
+	23, // 21: gateway.Gateway.GetCurrentUser:input_type -> google.protobuf.Empty
 	12, // 22: gateway.Gateway.GetUsers:input_type -> gateway.GetUsersRequest
 	14, // 23: gateway.Gateway.UpdateUser:input_type -> gateway.UpdateUserRequest
 	15, // 24: gateway.Gateway.UpdateCurrentUser:input_type -> gateway.UpdateCurrentUserRequest
 	16, // 25: gateway.Gateway.DeleteUser:input_type -> gateway.DeleteUserRequest
-	22, // 26: gateway.Gateway.DeleteCurrentUser:input_type -> google.protobuf.Empty
+	23, // 26: gateway.Gateway.DeleteCurrentUser:input_type -> google.protobuf.Empty
 	1,  // 27: gateway.Gateway.Register:output_type -> gateway.RegisterResponse
 	3,  // 28: gateway.Gateway.Login:output_type -> gateway.LoginResponse
 	17, // 29: gateway.Gateway.Refresh:output_type -> gateway.RefreshResponse
-	22, // 30: gateway.Gateway.Logout:output_type -> google.protobuf.Empty
+	23, // 30: gateway.Gateway.Logout:output_type -> google.protobuf.Empty
 	7,  // 31: gateway.Gateway.ValidateToken:output_type -> gateway.ValidateTokenResponse
-	22, // 32: gateway.Gateway.CreateUser:output_type -> google.protobuf.Empty
+	23, // 32: gateway.Gateway.CreateUser:output_type -> google.protobuf.Empty
 	10, // 33: gateway.Gateway.GetUser:output_type -> gateway.GetUserResponse
 	11, // 34: gateway.Gateway.GetCurrentUser:output_type -> gateway.GetCurrentUserResponse
 	13, // 35: gateway.Gateway.GetUsers:output_type -> gateway.GetUsersResponse
-	22, // 36: gateway.Gateway.UpdateUser:output_type -> google.protobuf.Empty
-	22, // 37: gateway.Gateway.UpdateCurrentUser:output_type -> google.protobuf.Empty
-	22, // 38: gateway.Gateway.DeleteUser:output_type -> google.protobuf.Empty
-	22, // 39: gateway.Gateway.DeleteCurrentUser:output_type -> google.protobuf.Empty
+	23, // 36: gateway.Gateway.UpdateUser:output_type -> google.protobuf.Empty
+	23, // 37: gateway.Gateway.UpdateCurrentUser:output_type -> google.protobuf.Empty
+	23, // 38: gateway.Gateway.DeleteUser:output_type -> google.protobuf.Empty
+	23, // 39: gateway.Gateway.DeleteCurrentUser:output_type -> google.protobuf.Empty
 	27, // [27:40] is the sub-list for method output_type
 	14, // [14:27] is the sub-list for method input_type
 	14, // [14:14] is the sub-list for extension type_name
