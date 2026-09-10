@@ -40,6 +40,15 @@ gen: docker-build
 			--go-grpc_out=/app \
 			--go-grpc_opt=module=$(GO_MODULE) \
 			/app/pagination/*.proto; \
+		echo ">> Processing transaction"; \
+		protoc \
+			-I /app \
+			-I /usr/local/include/googleapis \
+			--go_out=/app \
+			--go_opt=module=$(GO_MODULE) \
+			--go-grpc_out=/app \
+			--go-grpc_opt=module=$(GO_MODULE) \
+			/app/transaction/*.proto; \
 		echo ">> Processing gateway"; \
 		protoc \
 			-I /app \
@@ -54,4 +63,4 @@ gen: docker-build
 		echo ">> Generation completed successfully"'
 
 clean:
-	find account auth pagination gateway -type d -name go -exec rm -rf {} \;
+	find account auth pagination gateway transaction -type d -name go -exec rm -rf {} \;
