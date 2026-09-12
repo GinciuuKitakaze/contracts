@@ -8,38 +8,56 @@ import "google/protobuf/empty.proto";
 import "transaction/transaction_model.proto";
 import "pagination/pagination.proto";
 
+// TransactionService — сервис для работы с денежными операциями.
+// Поддерживает пополнение, снятие, перевод и получение истории транзакций.
 service TransactionService {
+  // Пополнение счёта пользователя.
+  // Возвращает пустой ответ при успехе.
   rpc Deposit(DepositRequest) returns (google.protobuf.Empty);
+
+  // Снятие денег со счёта пользователя.
+  // Возвращает пустой ответ при успехе.
   rpc Withdraw(WithdrawRequest) returns (google.protobuf.Empty);
+
+  // Перевод денег от одного пользователя другому.
+  // Создаёт одну транзакцию и два движения (списание и зачисление).
   rpc Transfer(TransferRequest) returns (google.protobuf.Empty);
+
+  // Получение истории транзакций с фильтрами и пагинацией.
   rpc GetTransactions(GetTransactionsRequest) returns (GetTransactionsResponse);
 }
 
-message DepositRequest{
-  uint64 user_id = 1;
-  uint64 amount = 2;
+// DepositRequest — запрос на пополнение счёта.
+message DepositRequest {
+  uint64 user_id = 1;   // ID пользователя, которому зачисляем
+  uint64 amount = 2;    // сумма в копейках (100 руб = 10000)
 }
 
+// WithdrawRequest — запрос на снятие денег.
 message WithdrawRequest {
-  uint64 user_id = 1;
-  uint64 amount = 2;
+  uint64 user_id = 1;   // ID пользователя, с которого списываем
+  uint64 amount = 2;    // сумма в копейках
 }
 
+// TransferRequest — запрос на перевод между пользователями.
 message TransferRequest {
-  uint64 user_id = 1;
-  uint64 amount = 2;
-  uint64 recipient = 3;
+  uint64 user_id = 1;   // ID отправителя
+  uint64 amount = 2;    // сумма в копейках
+  uint64 recipient = 3; // ID получателя
 }
 
+// GetTransactionsRequest — запрос истории транзакций с фильтрами.
+// Все фильтры опциональны: если поле не передано — фильтр не применяется.
 message GetTransactionsRequest {
-  optional uint64 user_id = 1;
-  optional string type = 2;
-  optional string status = 3;
-  optional google.protobuf.Timestamp date_from = 4; // фильтр по дате от
-  optional google.protobuf.Timestamp date_to = 5;   // фильтр по дате до
-  optional pagination.Pagination pagination = 6;
+  optional uint64 user_id = 1;                       // фильтр по пользователю
+  optional string type = 2;                          // фильтр по типу: deposit, withdraw, transfer
+  optional string status = 3;                        // фильтр по статусу: pending, completed, failed
+  optional google.protobuf.Timestamp date_from = 4;  // фильтр по дате от (включительно)
+  optional google.protobuf.Timestamp date_to = 5;    // фильтр по дате до (включительно)
+  optional pagination.Pagination pagination = 6;     // пагинация (limit, offset)
 }
 
+// GetTransactionsResponse — список транзакций с движениями.
 message GetTransactionsResponse {
-  repeated TransactionDetails transactions = 1;
+  repeated TransactionDetails transactions = 1; // массив транзакций
 }

@@ -24,10 +24,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// DepositRequest — запрос на пополнение счёта.
 type DepositRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // ID пользователя, которому зачисляем
+	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`               // сумма в копейках (100 руб = 10000)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,10 +77,11 @@ func (x *DepositRequest) GetAmount() uint64 {
 	return 0
 }
 
+// WithdrawRequest — запрос на снятие денег.
 type WithdrawRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // ID пользователя, с которого списываем
+	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`               // сумма в копейках
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,11 +130,12 @@ func (x *WithdrawRequest) GetAmount() uint64 {
 	return 0
 }
 
+// TransferRequest — запрос на перевод между пользователями.
 type TransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
-	Recipient     uint64                 `protobuf:"varint,3,opt,name=recipient,proto3" json:"recipient,omitempty"`
+	UserId        uint64                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // ID отправителя
+	Amount        uint64                 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`               // сумма в копейках
+	Recipient     uint64                 `protobuf:"varint,3,opt,name=recipient,proto3" json:"recipient,omitempty"`         // ID получателя
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,14 +191,16 @@ func (x *TransferRequest) GetRecipient() uint64 {
 	return 0
 }
 
+// GetTransactionsRequest — запрос истории транзакций с фильтрами.
+// Все фильтры опциональны: если поле не передано — фильтр не применяется.
 type GetTransactionsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        *uint64                `protobuf:"varint,1,opt,name=user_id,json=userId,proto3,oneof" json:"user_id,omitempty"`
-	Type          *string                `protobuf:"bytes,2,opt,name=type,proto3,oneof" json:"type,omitempty"`
-	Status        *string                `protobuf:"bytes,3,opt,name=status,proto3,oneof" json:"status,omitempty"`
-	DateFrom      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=date_from,json=dateFrom,proto3,oneof" json:"date_from,omitempty"` // фильтр по дате от
-	DateTo        *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=date_to,json=dateTo,proto3,oneof" json:"date_to,omitempty"`       // фильтр по дате до
-	Pagination    *_go.Pagination        `protobuf:"bytes,6,opt,name=pagination,proto3,oneof" json:"pagination,omitempty"`
+	UserId        *uint64                `protobuf:"varint,1,opt,name=user_id,json=userId,proto3,oneof" json:"user_id,omitempty"`      // фильтр по пользователю
+	Type          *string                `protobuf:"bytes,2,opt,name=type,proto3,oneof" json:"type,omitempty"`                         // фильтр по типу: deposit, withdraw, transfer
+	Status        *string                `protobuf:"bytes,3,opt,name=status,proto3,oneof" json:"status,omitempty"`                     // фильтр по статусу: pending, completed, failed
+	DateFrom      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=date_from,json=dateFrom,proto3,oneof" json:"date_from,omitempty"` // фильтр по дате от (включительно)
+	DateTo        *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=date_to,json=dateTo,proto3,oneof" json:"date_to,omitempty"`       // фильтр по дате до (включительно)
+	Pagination    *_go.Pagination        `protobuf:"bytes,6,opt,name=pagination,proto3,oneof" json:"pagination,omitempty"`             // пагинация (limit, offset)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -272,9 +277,10 @@ func (x *GetTransactionsRequest) GetPagination() *_go.Pagination {
 	return nil
 }
 
+// GetTransactionsResponse — список транзакций с движениями.
 type GetTransactionsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Transactions  []*TransactionDetails  `protobuf:"bytes,1,rep,name=transactions,proto3" json:"transactions,omitempty"`
+	Transactions  []*TransactionDetails  `protobuf:"bytes,1,rep,name=transactions,proto3" json:"transactions,omitempty"` // массив транзакций
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

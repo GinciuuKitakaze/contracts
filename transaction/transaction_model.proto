@@ -5,23 +5,30 @@ option go_package = "github.com/GinciuuKitakaze/contracts/transaction/go;transac
 
 import "google/protobuf/timestamp.proto";
 
+// Transaction — «шапка» транзакции.
+// Хранит общую информацию об операции без деталей движений.
 message Transaction {
-  string id = 1;
-  string type = 2;
-  string status = 3;
-  google.protobuf.Timestamp created_at = 4;
-  google.protobuf.Timestamp updated_at = 5;
+  string id = 1;                              // уникальный ID транзакции
+  string type = 2;                            // тип: deposit, withdraw, transfer
+  string status = 3;                          // статус: pending, completed, failed
+  google.protobuf.Timestamp created_at = 4;   // дата создания
+  google.protobuf.Timestamp updated_at = 5;   // дата последнего обновления
 }
 
+// TransactionEntry — движение по счёту (одна строка транзакции).
+// Одна транзакция может содержать несколько движений
+// (например, перевод = списание у одного + зачисление другому).
 message TransactionEntry {
-  string id = 1;
-  string transaction_id = 2;
-  string account_id = 3;
-  string direction = 4;
-  double amount = 5;
+  string id = 1;               // уникальный ID движения
+  string transaction_id = 2;   // ссылка на Transaction.id
+  string account_id = 3;       // ID счёта (или пользователя), которого касается движение
+  string direction = 4;        // направление: debit (списание) или credit (зачисление)
+  double amount = 5;           // сумма движения
 }
 
+// TransactionDetails — полная информация о транзакции: шапка + все движения.
+// Используется в ответах GetTransactions.
 message TransactionDetails {
-  Transaction transaction = 1;
-  repeated TransactionEntry entries = 2;
+  Transaction transaction = 1;              // шапка транзакции
+  repeated TransactionEntry entries = 2;    // массив движений
 }

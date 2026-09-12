@@ -29,10 +29,20 @@ const (
 // TransactionServiceClient is the client API for TransactionService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// TransactionService — сервис для работы с денежными операциями.
+// Поддерживает пополнение, снятие, перевод и получение истории транзакций.
 type TransactionServiceClient interface {
+	// Пополнение счёта пользователя.
+	// Возвращает пустой ответ при успехе.
 	Deposit(ctx context.Context, in *DepositRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Снятие денег со счёта пользователя.
+	// Возвращает пустой ответ при успехе.
 	Withdraw(ctx context.Context, in *WithdrawRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Перевод денег от одного пользователя другому.
+	// Создаёт одну транзакцию и два движения (списание и зачисление).
 	Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Получение истории транзакций с фильтрами и пагинацией.
 	GetTransactions(ctx context.Context, in *GetTransactionsRequest, opts ...grpc.CallOption) (*GetTransactionsResponse, error)
 }
 
@@ -87,10 +97,20 @@ func (c *transactionServiceClient) GetTransactions(ctx context.Context, in *GetT
 // TransactionServiceServer is the server API for TransactionService service.
 // All implementations must embed UnimplementedTransactionServiceServer
 // for forward compatibility.
+//
+// TransactionService — сервис для работы с денежными операциями.
+// Поддерживает пополнение, снятие, перевод и получение истории транзакций.
 type TransactionServiceServer interface {
+	// Пополнение счёта пользователя.
+	// Возвращает пустой ответ при успехе.
 	Deposit(context.Context, *DepositRequest) (*emptypb.Empty, error)
+	// Снятие денег со счёта пользователя.
+	// Возвращает пустой ответ при успехе.
 	Withdraw(context.Context, *WithdrawRequest) (*emptypb.Empty, error)
+	// Перевод денег от одного пользователя другому.
+	// Создаёт одну транзакцию и два движения (списание и зачисление).
 	Transfer(context.Context, *TransferRequest) (*emptypb.Empty, error)
+	// Получение истории транзакций с фильтрами и пагинацией.
 	GetTransactions(context.Context, *GetTransactionsRequest) (*GetTransactionsResponse, error)
 	mustEmbedUnimplementedTransactionServiceServer()
 }
