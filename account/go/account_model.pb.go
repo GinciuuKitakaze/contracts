@@ -262,6 +262,7 @@ type UpdateUser struct {
 	LastName      string                 `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	MiddleName    string                 `protobuf:"bytes,5,opt,name=middle_name,json=middleName,proto3" json:"middle_name,omitempty"`
 	Age           uint32                 `protobuf:"varint,6,opt,name=age,proto3" json:"age,omitempty"`
+	Balance       float32                `protobuf:"fixed32,7,opt,name=balance,proto3" json:"balance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -338,6 +339,13 @@ func (x *UpdateUser) GetAge() uint32 {
 	return 0
 }
 
+func (x *UpdateUser) GetBalance() float32 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
+}
+
 var File_account_account_model_proto protoreflect.FileDescriptor
 
 const file_account_account_model_proto_rawDesc = "" +
@@ -373,7 +381,7 @@ const file_account_account_model_proto_rawDesc = "" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x18\n" +
 	"\abalance\x18\v \x01(\x02R\abalance\x12\x1d\n" +
 	"\n" +
-	"is_deleted\x18\f \x01(\bR\tisDeleted\"\xa7\x01\n" +
+	"is_deleted\x18\f \x01(\bR\tisDeleted\"\xc1\x01\n" +
 	"\n" +
 	"UpdateUser\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
@@ -383,7 +391,8 @@ const file_account_account_model_proto_rawDesc = "" +
 	"\tlast_name\x18\x04 \x01(\tR\blastName\x12\x1f\n" +
 	"\vmiddle_name\x18\x05 \x01(\tR\n" +
 	"middleName\x12\x10\n" +
-	"\x03age\x18\x06 \x01(\rR\x03ageB9Z7github.com/GinciuuKitakaze/contracts/account/go;accountb\x06proto3"
+	"\x03age\x18\x06 \x01(\rR\x03age\x12\x18\n" +
+	"\abalance\x18\a \x01(\x02R\abalanceB9Z7github.com/GinciuuKitakaze/contracts/account/go;accountb\x06proto3"
 
 var (
 	file_account_account_model_proto_rawDescOnce sync.Once
