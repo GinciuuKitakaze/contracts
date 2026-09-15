@@ -9,7 +9,7 @@ import "account/account_model.proto";
 import "pagination/pagination.proto";
 
 service Account {
-  rpc CreateUser(CreateUserRequest) returns (GetUserResponse) {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
     option (google.api.http) = {
       post: "/account/api/v1/create_user",
       body: "*"
@@ -44,12 +44,16 @@ service Account {
   // управление балансом
   rpc Deposit(DepositRequest) returns (DepositResponse);
   rpc Withdraw(WithdrawRequest) returns (WithdrawResponse);
-  rpc Transfer(TransferRequest) returns (google.protobuf.Empty);
+  rpc Transfer(TransferRequest) returns (TransferResponse);
   rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse);
 }
 
 message CreateUserRequest{
   CreateUser user = 1;
+}
+
+message CreateUserResponse{
+  User user = 1;
 }
 
 message GetUserRequest {
@@ -82,7 +86,7 @@ message UpdateUserRequest {
 message DepositRequest{
   uint64 user_id = 1;
   int64 amount = 2;
-  uint64 operation_id = 3;
+  string operation_id = 3;
 }
 
 message DepositResponse {
